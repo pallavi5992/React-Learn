@@ -2,12 +2,13 @@ import RestrauntCard from "./RestrauntCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer"
 import { Link } from "react-router-dom";
+import useOnlineStatus from '../../utils/useOnlineStatus'
+
+
 const Body = () => {
   const [restrautList, setRestrautList] = useState([]);
   const [fiterRest, setfilterRest] = useState([])
   const [searchText, setSearchText]= useState("")
-
-
 
 
   useEffect(() => {
@@ -33,14 +34,13 @@ const Body = () => {
     }
   };
 
-  // if(restrautList.length == 0){
-  //   return <h1> Loading...</h1>
-  // }
+const onlineStatus = useOnlineStatus();
+
+  if (!onlineStatus) {
+    return <h3>Looks like you are offline! Please check your internet connection.</h3>;
+  }
 
 
-  // if(restrautList.length == 0){
-  //   return <Shimmer/>
-  // }
   return restrautList.length == 0 ?  <Shimmer/> :(
     <div className="body">
       <div className="filter">

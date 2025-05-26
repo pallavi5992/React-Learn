@@ -1,23 +1,27 @@
-import React, { useState, useEffect } from 'react'
+
 import { useParams } from 'react-router-dom'
 import Shimmer from './Shimmer'
+import useRestrauntmenu from '../../utils/useRestrauntmenu'
+
 
 const RestrauntMenu = () => {
   const { resId } = useParams()
-  const [resinfo, setResinfo] = useState(null)
 
-  useEffect(() => {
-    fetchmenu()
-  }, [])
+  const resinfo = useRestrauntmenu(resId) // custom hook
+  // const [resinfo, setResinfo] = useState(null)
 
-  const fetchmenu = async () => {
-    const data = await fetch(
-      `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=19.9615398&lng=79.2961468&restaurantId=${resId}`
-    )
-    const json = await data.json()
-    console.log(json?.data?.cards[2]?.card?.card?.info)
-    setResinfo(json?.data?.cards[2]?.card?.card?.info)
-  }
+  // useEffect(() => {
+  //   fetchmenu()
+  // }, [])
+
+  // const fetchmenu = async () => {
+  //   const data = await fetch(
+  //     `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=19.9615398&lng=79.2961468&restaurantId=${resId}`
+  //   )
+  //   const json = await data.json()
+  //   console.log(json?.data?.cards[2]?.card?.card?.info)
+  //   setResinfo(json?.data?.cards[2]?.card?.card?.info)
+  // }
 
   if (resinfo === null) return <Shimmer />
 
