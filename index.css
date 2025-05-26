@@ -1,0 +1,53 @@
+h1#heading {
+    color: red;
+}
+.logo-container img {
+    width: 75px;
+    height: 50px;
+}
+.nav-items {
+    float: right;
+}
+.filter button.filter\=btn {
+    padding: 5px;
+    margin: 15px;
+    cursor: pointer;
+}
+.nav-items > ul{
+    list-style-type: none;
+    display: flex;
+}
+.nav-items > ul > li {
+    padding: 10px;
+}
+.header img {
+    width: 112px;
+    height: 96px;
+}
+.shimmer-cards{
+     width: 253px;
+    height: 434px;
+    padding: 20px;
+    margin: 28px;
+    background-color: rgb(233, 233, 167);
+}
+.res-card {
+    width: 253px;
+    height: 434px;
+    padding: 20px;
+    margin: 20px;
+}
+.res-conatiner {
+display: flex;
+    flex:wrap
+}
+.res-logo img {
+    width: 242px;
+    padding: 6px;
+}
+
+
+.res-logo {
+    width: 312px;
+    height: 200px;
+}

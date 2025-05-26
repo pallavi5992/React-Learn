@@ -1,0 +1,21 @@
+{
+  "name": "eposide-02-igniting",
+  "version": "1.0.0",
+  "description": "react learning",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parcel build index.html",
+    "start": "parcel index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.15.1"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router": "^6.23.0",
+    "react-router-dom": "^6.23.0"
+  }
+}
